@@ -37,21 +37,6 @@ public class SelectionSortArray {
         System.out.println();
     }
     
-    //Selection sort//Insert elements
-    public void insert(){
-        
-        System.out.println("Enter values to the array: ");
-        Scanner userInput = new Scanner(System.in);
-        for(int i=0;i<array.length;i++){
-            System.out.print("Value "+(i+1)+": ");
-            //User input
-            array[i]= userInput.nextInt();
-            nElems++;
-            if(nElems==array.length)
-                System.out.println("Array is filled. Can't enter anymore values!");
-        }
-        System.out.println();
-    }
 
     public void selectionSort(){
         
