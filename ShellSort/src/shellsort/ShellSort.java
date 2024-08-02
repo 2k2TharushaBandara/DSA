@@ -4,15 +4,7 @@ import java.util.Scanner;
 
 public class ShellSort {
 
-    private static int[] array;
-    private int size;
-    
-    public ShellSort(int size){
-        this.size = size;
-        this.array = new int[size];
-    }
-    
-    public void ShellSort(int[] array, int size){
+    public static void shellSort(int[] array, int size){
         int pass=0;
         for(int interval = size/2; interval>=1 ; interval/=2){
             System.out.print("Array after pass "+pass+" : ");display(array,size);
@@ -30,7 +22,7 @@ public class ShellSort {
         System.out.print("Array after pass "+pass+" : ");display(array,size);
     }    
     
-    public void display(int[] array, int size){
+    public static void display(int[] array, int size){
         for(int i=0; i<size ; i++){
             System.out.print(array[i]+"  ");
         }
@@ -43,8 +35,7 @@ public class ShellSort {
         //size=9
         Scanner input = new Scanner(System.in);
         int user = input.nextInt();
-        ShellSort s1 = new ShellSort(user);
-        
+        int[] array = new int[user];
         System.out.println("Enter values to the array:");
         //array=33,31,40,8,12,17,17,25,42  
         for(int i=0; i<user ; i++){
@@ -53,11 +44,10 @@ public class ShellSort {
         }
         
         
-        s1.display(array, user);
+        display(array, user);
         
-        s1.ShellSort(array, user);
-        System.out.print("Sorted Array: ");
-        s1.display(array, user);
+        shellSort(array, user);
+        System.out.print("Sorted Array: ");display(array, user);
     }
     
 }
